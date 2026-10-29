@@ -1,5 +1,6 @@
 import {Component} from 'react';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Button from '../button/button';
 import AuthDialog from './auth-dialog';
 
@@ -13,6 +14,7 @@ export default {
     screenshots: {captureSelector: '*[data-test~=ring-dialog]'},
     a11y: {context: '#storybook-root,*[data-test~=ring-dialog]'},
   },
+  play: playScreenshotActions,
 };
 
 interface AuthDialogArgs {

@@ -76,6 +76,12 @@ After you make some visual changes, run `npm run screenshots-test` to make sure 
 To update the reference images for a certain component (for example, `alert`):
 `npm run screenshots-gather -- -- --grep Components/Alert`.
 
+#### UI Verify
+
+Every pull request also gets a [UI Verify](https://uiverify.ai) check (`.github/workflows/visual-tests.yml`): it builds Storybook and screenshots every story in light and dark, in the cloud, with nothing to run locally. Changed stories wait for review in the check, and the changes you accept become the baseline when the pull request merges. Stories that skip Testplane (`screenshots: {skip: true}`) also set `uiVerify: {disableSnapshot: true}`. The `actions` and `captureSelector` in `parameters.screenshots` are replayed for UI Verify by `.storybook/ui-verify.ts`, so a new interaction state is declared once, for both tools; a story file that uses them adds `play: playScreenshotActions` to its default export.
+
+`src/stories.test.ts` fails when a component has no story, so a new component can't land without screenshots.
+
 ### Accessibility audit
 
 It is very important for web components to be accessible for everyone. We have some accessibility tests set up.

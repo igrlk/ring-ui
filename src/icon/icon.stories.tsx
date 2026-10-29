@@ -143,6 +143,7 @@ jetBrainsProductLogosList.storyName = 'JetBrains product logos list';
 
 jetBrainsProductLogosList.parameters = {
   screenshots: {skip: true}, // Logos example is too big and have no much sense to test
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
   .ring-icon {

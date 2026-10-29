@@ -1,3 +1,4 @@
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Input from '../input/input';
 import Button from '../button/button';
 import Link from '../link/link';
@@ -14,6 +15,7 @@ export default {
   parameters: {
     notes: 'Disallows tabbing out of a designated area.',
   },
+  play: playScreenshotActions,
 };
 
 export const Basic = () => {

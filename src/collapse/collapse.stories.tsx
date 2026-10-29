@@ -2,6 +2,7 @@ import {useState} from 'react';
 import ChevronDownIcon from '@jetbrains/icons/chevron-down';
 import ChevronUpIcon from '@jetbrains/icons/chevron-up';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Button from '../button/button';
 import LoaderInline from '../loader-inline/loader-inline';
 import Collapse from './collapse';
@@ -20,6 +21,7 @@ export default {
       actions: [{type: 'click', selector: '[data-test~=ring-collapse-control] button'}],
     },
   },
+  play: playScreenshotActions,
 };
 const text = `This is very long text! This is very long text! This is very long text! This is very
             long text! This is very long text! This is very long text! This is very long text! This

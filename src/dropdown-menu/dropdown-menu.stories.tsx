@@ -1,6 +1,7 @@
 import * as React from 'react';
 import chevronRight from '@jetbrains/icons/chevron-right';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import List from '../list/list';
 import {Directions} from '../popup/popup.consts';
 import Icon from '../icon';
@@ -26,6 +27,7 @@ export default {
     },
     a11y: {context: '#storybook-root,*[data-test~=ring-dropdown]'},
   },
+  play: playScreenshotActions,
 };
 
 export const basic = () => {

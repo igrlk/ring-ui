@@ -1,5 +1,6 @@
 import {Component} from 'react';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Link from '../link/link';
 import Button from '../button/button';
 import {type AlertItem} from '../alert-service/alert-service';
@@ -9,6 +10,7 @@ export default {
   title: 'Components/Alert',
 
   component: Alert,
+  play: playScreenshotActions,
 };
 
 export const simple = () => {

@@ -18,6 +18,7 @@ export default {
   component: SimpleTable,
   parameters: {
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
   argTypes: {
     selection: {

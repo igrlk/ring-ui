@@ -1,5 +1,6 @@
 import {Component} from 'react';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Select, {type SingleSelectAttrs} from '../select/select';
 import Dialog from '../dialog/dialog';
 import {Header, Content} from '../island/island';
@@ -14,6 +15,7 @@ export default {
     notes:
       'Displays an error bubble near the wrapped input component when a non-empty string is passed to the `error` prop. * Passes any prop except `className` down to the input.',
   },
+  play: playScreenshotActions,
 };
 
 export const basic = () => {

@@ -119,5 +119,6 @@ export const withPopup = () => {
 withPopup.storyName = 'Theme Provider and Popup';
 withPopup.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles,
 };

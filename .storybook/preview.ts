@@ -7,12 +7,13 @@ import strictModeDecorator from './strict-mode-decorator';
 import stylesDecorator from './styles-decorator';
 import themeDecorator from './theme-decorator';
 import {theme} from './theme';
+import {isUIVerify} from './ui-verify';
 
 import styles from './preview.css';
 import queryAssistStyles from '../src/query-assist/query-assist.css';
 
 const params = new URLSearchParams(location.search.slice(1));
-if (params.has('block-animations')) {
+if (params.has('block-animations') || isUIVerify()) {
   document.body.classList.add(styles.blockAnimations);
 }
 
@@ -39,6 +40,12 @@ export const parameters = {
     },
   },
   backgrounds: {disable: true},
+  uiVerify: {
+    modes: {
+      light: {theme: 'light'},
+      dark: {theme: 'dark'},
+    },
+  },
 };
 
 export const decorators = [stylesDecorator(), strictModeDecorator(), themeDecorator()];

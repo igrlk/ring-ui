@@ -13,6 +13,7 @@ export default {
   parameters: {
     notes: 'Service for managing a stack of alerts.',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
 };
 

@@ -1,5 +1,6 @@
 import chevronDownIcon from '@jetbrains/icons/chevron-down';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import {ActiveItemContext} from '../list/list';
 import Popup from '../popup/popup';
 import PopupMenu from '../popup-menu/popup-menu';
@@ -26,6 +27,7 @@ export default {
       ],
     },
   },
+  play: playScreenshotActions,
 };
 
 export const basic = () => (
@@ -116,7 +118,7 @@ export const withHoverModeAndDisabledClickMode = () => (
 );
 
 withHoverModeAndDisabledClickMode.storyName = 'with hover mode and disabled click mode';
-withHoverModeAndDisabledClickMode.parameters = {screenshots: {skip: true}};
+withHoverModeAndDisabledClickMode.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const autofocusOnOpen = () => (
   <div>
@@ -131,7 +133,7 @@ export const autofocusOnOpen = () => (
 );
 
 autofocusOnOpen.storyName = 'autofocus on open';
-autofocusOnOpen.parameters = {screenshots: {skip: true}};
+autofocusOnOpen.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const renderProps = () => (
   <Dropdown anchor='Click me'>
@@ -144,4 +146,4 @@ export const renderProps = () => (
     )}
   </Dropdown>
 );
-renderProps.parameters = {screenshots: {skip: true}};
+renderProps.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};

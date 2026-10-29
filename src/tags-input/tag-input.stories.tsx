@@ -3,6 +3,7 @@ import exceptionIcon from '@jetbrains/icons/exception';
 import frownIcon from '@jetbrains/icons/frown';
 import {useState} from 'react';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Button from '../button/button';
 import Dialog from '../dialog/dialog';
 import {Content} from '../island/island';
@@ -17,6 +18,7 @@ export default {
   parameters: {
     notes: 'Displays a tags input field.',
   },
+  play: playScreenshotActions,
 };
 
 export const basic = () => {

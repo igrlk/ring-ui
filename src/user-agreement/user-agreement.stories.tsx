@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import {type StoryFn} from '@storybook/react-webpack5';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import alert from '../alert-service/alert-service';
 import UserAgreement, {type UserAgreementAttrs} from './user-agreement';
 import UserAgreementService, {type Agreement, type Consent, type ConsentResponse} from './service';
@@ -14,6 +15,7 @@ export default {
     screenshots: {captureSelector: '*[data-test~=ring-dialog]'},
     a11y: {context: '#storybook-root,*[data-test~=ring-dialog]'},
   },
+  play: playScreenshotActions,
 };
 
 export const dialog: StoryFn<UserAgreementAttrs> = args => (
@@ -120,5 +122,6 @@ service.argTypes = {
 service.storyName = 'service';
 service.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   a11y: {context: '#storybook-root,*[data-test="alert-container"]'},
 };

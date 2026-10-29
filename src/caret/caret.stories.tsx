@@ -11,6 +11,7 @@ export default {
     notes:
       'Allows manipulation of the caret position in a text box or a contenteditable element. Ported from [jquery-caret](https://github.com/accursoft/caret/).',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
 };
 

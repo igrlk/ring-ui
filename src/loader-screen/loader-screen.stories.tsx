@@ -9,6 +9,7 @@ export default {
     notes:
       'Displays a large animated loader with an optional caption. Typical use cases: page loading animation, major action animation.',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
 };
 

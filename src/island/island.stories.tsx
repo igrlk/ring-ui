@@ -1,3 +1,4 @@
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Island, {AdaptiveIsland, Header, Content} from './island';
 
 export default {
@@ -7,6 +8,7 @@ export default {
     notes: 'Displays an island.',
     screenshots: {captureSelector: '*[data-test~=ring-island]'},
   },
+  play: playScreenshotActions,
 };
 
 export const basic = () => (

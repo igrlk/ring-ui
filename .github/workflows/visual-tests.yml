@@ -1,0 +1,59 @@
+name: Visual tests
+
+# Builds Storybook and uploads it to UI Verify, which screenshots every story in light and dark
+# (see `.storybook/ui-verify.ts`). A pull request from a fork gets no secrets, so its build is saved
+# as an artifact and uploaded by visual-upload.yml.
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+
+      # Story images are stored in Git LFS
+      - run: git lfs pull --include="src/**"
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.22.3'
+          cache: 'npm'
+
+      - run: npm ci
+
+      # --stats-json lets UI Verify render only the stories a change can affect
+      - run: npm run build-stories -- --stats-json
+
+      - name: Set up Node 24 for the UI Verify CLI
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Upload to UI Verify
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          FLAGS="--static-dir ./storybook-dist"
+          # On a pull request, changes wait for review in the UI Verify check instead of failing this job
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then FLAGS="$FLAGS --auto-accept-changes"; else FLAGS="$FLAGS --exit-zero-on-changes"; fi
+          npx -y uiverify@1.8.0 upload $FLAGS
+        env:
+          UIVERIFY_API_KEY: ${{ secrets.UIVERIFY_API_KEY }}
+
+      - name: Save the Storybook build for visual-upload.yml
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: uiverify-archive
+          path: ./storybook-dist/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7

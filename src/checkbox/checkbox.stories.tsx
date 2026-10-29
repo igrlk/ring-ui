@@ -11,7 +11,7 @@ export default {
 
 export const controls = (args: CheckboxProps) => <Checkbox {...args} />;
 controls.args = {label: 'label'};
-controls.parameters = {screenshots: {skip: true}};
+controls.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const basic = () => (
   <Fragment>

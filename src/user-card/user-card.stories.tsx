@@ -61,7 +61,7 @@ export const smartTooltip = () => {
 };
 
 smartTooltip.storyName = 'smart tooltip';
-smartTooltip.parameters = {screenshots: {skip: true}};
+smartTooltip.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const hubUserCard = () => {
   const auth = new Auth(hubConfig);
@@ -83,5 +83,5 @@ export const hubUserCard = () => {
 };
 
 hubUserCard.storyName = 'hub user card';
-hubUserCard.parameters = {screenshots: {skip: true}};
+hubUserCard.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 hubUserCard.tags = ['skip-test'];

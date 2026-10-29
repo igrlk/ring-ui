@@ -26,6 +26,7 @@ export default {
 
   parameters: {
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
     [hideAddonsPanelParam]: true,
   },
 

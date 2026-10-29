@@ -1,6 +1,7 @@
 import {Component, type ReactNode} from 'react';
 import classNames from 'classnames';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Text from '../text/text';
 import Popup from './popup';
 
@@ -11,6 +12,7 @@ export default {
   parameters: {
     notes: 'Displays a popup.',
   },
+  play: playScreenshotActions,
 };
 
 interface PopupDemoState {
@@ -278,6 +280,7 @@ insideAScrollableContainer.storyName = 'inside a scrollable container';
 
 insideAScrollableContainer.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
     body {

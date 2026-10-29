@@ -152,6 +152,7 @@ export const filePickerScenario: Story = () => {
 
 filePickerScenario.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };
 
 export const programmaticOpen: Story = args => {
@@ -186,6 +187,7 @@ programmaticOpen.args = {
 
 programmaticOpen.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };
 
 programmaticOpen.storyName = 'Programmatic open';

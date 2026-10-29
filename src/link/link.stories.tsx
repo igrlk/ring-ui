@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import classNames from 'classnames';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Icon from '../icon/icon';
 import Link, {linkHOC} from './link';
 import {type ClickableLinkProps} from './clickable-link';
@@ -13,6 +14,7 @@ export default {
   parameters: {
     notes: 'Displays a link.',
   },
+  play: playScreenshotActions,
 };
 
 interface CustomComponentProps extends ClickableLinkProps {

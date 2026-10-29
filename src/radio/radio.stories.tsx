@@ -55,7 +55,7 @@ export const uncontrolled = () => (
 );
 
 uncontrolled.storyName = 'uncontrolled';
-uncontrolled.parameters = {screenshots: {skip: true}};
+uncontrolled.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const disabled = () => (
   <Radio disabled>

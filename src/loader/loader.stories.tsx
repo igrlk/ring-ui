@@ -14,6 +14,7 @@ basic.storyName = 'Loader';
 basic.args = {message: 'Loading...'};
 basic.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };
 
 export const squares: StoryObj<LoaderProps> = {

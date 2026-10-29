@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {type StoryFn} from '@storybook/react-webpack5';
 import {enUS} from 'date-fns/locale/en-US';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import {Size} from '../input/input';
 import DatePicker, {type DatePickerAttrs} from './date-picker';
 import {type DatePickerChange} from './consts';
@@ -36,6 +37,7 @@ export default {
       control: {type: 'select'},
     },
   },
+  play: playScreenshotActions,
 };
 
 export const SingleDate: StoryFn<DatePickerAttrs> = args => {
@@ -246,6 +248,7 @@ RangeWithCustomPlaceholders.storyName = 'Range With Customized Placeholders';
 
 RangeWithCustomPlaceholders.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };
 
 export const RenderInline: StoryFn<DatePickerAttrs> = args => {
@@ -264,6 +267,7 @@ RenderInline.args = {
 
 RenderInline.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };
 
 RenderInline.storyName = 'Inline';

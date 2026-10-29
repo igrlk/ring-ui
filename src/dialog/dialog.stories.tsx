@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import {useState} from 'storybook/preview-api';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import {Header, Content} from '../island/island';
 import Button from '../button/button';
 import Input from '../input/input';
@@ -20,6 +21,7 @@ export default {
     screenshots: {captureSelector: '*[data-test~=ring-dialog]'},
     a11y: {context: '#storybook-root,*[data-test~=ring-dialog]'},
   },
+  play: playScreenshotActions,
 };
 
 interface Args {
@@ -144,6 +146,7 @@ withCloseButtonInside.argTypes = {onAction: {}};
 
 withCloseButtonInside.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };
 
 export const native: StoryFn<Args> = ({onAction}) => {
@@ -347,6 +350,7 @@ export const DialogInPopup: StoryFn = () => {
 };
 DialogInPopup.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };
 
 export const NativeDialogInPopup: StoryFn = () => {
@@ -370,4 +374,5 @@ export const NativeDialogInPopup: StoryFn = () => {
 };
 NativeDialogInPopup.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };

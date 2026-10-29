@@ -12,6 +12,7 @@ export default {
     notes:
       'A wrapper for the AuthDialog component. Allows showing the auth dialog without mounting the AuthDialog component first. Can be used outside React.',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
   tags: ['skip-test'],
 };

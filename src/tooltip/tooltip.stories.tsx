@@ -1,5 +1,6 @@
 import {type CSSProperties, Fragment, useState} from 'react';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Button from '../button/button';
 import Link from '../link/link';
 import Tooltip from './tooltip';
@@ -20,6 +21,7 @@ export default {
       ],
     },
   },
+  play: playScreenshotActions,
 };
 
 export const basic = () => (
@@ -117,6 +119,7 @@ export const complexMarkup = () => (
 
 complexMarkup.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };
 
 export const shortcut = () => (

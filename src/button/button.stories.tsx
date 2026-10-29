@@ -3,6 +3,7 @@ import pencilIcon from '@jetbrains/icons/pencil';
 import pencil12pxIcon from '@jetbrains/icons/pencil-12px';
 import hourglassIcon from '@jetbrains/icons/hourglass';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Loader from '../loader/loader';
 import LoaderInline from '../loader-inline/loader-inline';
 import {ControlsHeight, ControlsHeightContext} from '../global/controls-height';
@@ -19,11 +20,12 @@ export default {
       table: {disable: true},
     },
   },
+  play: playScreenshotActions,
 };
 
 export const single = (args: ButtonProps) => <Button {...args} />;
 single.args = {children: 'Label'};
-single.parameters = {screenshots: {skip: true}};
+single.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const basic = () => (
   <Grid className='buttons'>
@@ -155,4 +157,4 @@ export const longAction = () => {
 };
 
 longAction.storyName = 'long action';
-longAction.parameters = {screenshots: {skip: true}};
+longAction.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};

@@ -13,6 +13,7 @@ export default {
   parameters: {
     notes: 'Authenticates a user in [Hub](https://www.jetbrains.com/hub/).',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
   tags: ['skip-test'],
 };

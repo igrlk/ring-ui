@@ -3,6 +3,7 @@ import warningIcon from '@jetbrains/icons/warning';
 import {type StoryFn} from '@storybook/react-webpack5';
 import {fn} from 'storybook/test';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import hubConfig from '../../.storybook/hub-config';
 import Loader from '../loader/loader';
 import Tooltip from '../tooltip/tooltip';
@@ -29,6 +30,7 @@ export default {
   args: {
     onResize: fn(),
   },
+  play: playScreenshotActions,
 };
 
 export const basic: StoryFn<ListAttrs> = args => <List {...args} />;
@@ -78,7 +80,7 @@ withAHintBelow.args = {
 export const longList: StoryFn<ListAttrs> = args => <List {...args} />;
 
 longList.storyName = 'long list';
-longList.parameters = {screenshots: {skip: true}};
+longList.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 longList.args = {
   maxHeight: 400,
   compact: true,
@@ -192,7 +194,7 @@ withItemIcons.args = {
 export const withDeprecatedItemTypeParameter: StoryFn<ListAttrs> = args => <List {...args} />;
 
 withDeprecatedItemTypeParameter.storyName = 'with deprecated item.type parameter';
-withDeprecatedItemTypeParameter.parameters = {screenshots: {skip: true}};
+withDeprecatedItemTypeParameter.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 withDeprecatedItemTypeParameter.args = {
   shortcuts: true,
   data: [
@@ -264,7 +266,7 @@ export const WithUsers = () => {
 };
 
 WithUsers.storyName = 'with users';
-WithUsers.parameters = {screenshots: {skip: true}};
+WithUsers.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 WithUsers.tags = ['skip-test'];
 
 export const withCustomTooltip: StoryFn<ListAttrs> = args => <List {...args} />;

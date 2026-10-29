@@ -12,6 +12,7 @@ import bellIcon from '@jetbrains/icons/bell-20px';
 import {type StoryFn} from '@storybook/react-webpack5';
 
 import hubConfig from '../../.storybook/hub-config';
+import {isUIVerify} from '../../.storybook/ui-verify';
 import Link from '../link/link';
 import DropdownMenu from '../dropdown-menu/dropdown-menu';
 import showAuthDialog from '../auth-dialog-service/auth-dialog-service';
@@ -30,7 +31,7 @@ import teamcityLogo from '@jetbrains/logos/teamcity/teamcity.svg';
 import hubTextLogo from '@jetbrains/logos/hub/hub-text.svg';
 import hubLogo from '@jetbrains/logos/hub/hub.svg';
 
-const blockAuth = window.location.search.includes('block-auth');
+const blockAuth = window.location.search.includes('block-auth') || isUIVerify();
 
 export default {
   title: 'Components/Header',

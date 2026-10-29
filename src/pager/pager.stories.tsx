@@ -1,5 +1,6 @@
 import {Component} from 'react';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Pager from './pager';
 
 function getDataFromUrl(name: string, defaultValue: number) {
@@ -24,6 +25,7 @@ export default {
     notes: 'Displays a pager.',
     screenshots: {captureSelector: '*[data-test~=ring-pager]'},
   },
+  play: playScreenshotActions,
 };
 
 export const basic = () => {
@@ -76,7 +78,7 @@ export const customFrameSize = () => {
 };
 
 customFrameSize.storyName = 'custom frame size';
-customFrameSize.parameters = {screenshots: {skip: true}};
+customFrameSize.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const customFrameSize2 = () => {
   class PagerDemo extends Component {
@@ -103,7 +105,7 @@ export const customFrameSize2 = () => {
 };
 
 customFrameSize2.storyName = 'custom frame size #2';
-customFrameSize2.parameters = {screenshots: {skip: true}};
+customFrameSize2.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const customFrameSize3 = () => {
   class PagerDemo extends Component {
@@ -130,7 +132,7 @@ export const customFrameSize3 = () => {
 };
 
 customFrameSize3.storyName = 'custom frame size #3';
-customFrameSize3.parameters = {screenshots: {skip: true}};
+customFrameSize3.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const pageSizeSelector = () => {
   class PagerDemo extends Component {
@@ -249,7 +251,7 @@ export const openTotalAndHistorySupport = () => {
 };
 
 openTotalAndHistorySupport.storyName = 'open total and history support';
-openTotalAndHistorySupport.parameters = {screenshots: {skip: true}};
+openTotalAndHistorySupport.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const reloadOnCurrentPageChange = () => {
   class PagerDemo extends Component {
@@ -277,4 +279,4 @@ export const reloadOnCurrentPageChange = () => {
 };
 
 reloadOnCurrentPageChange.storyName = 'reload on current page change';
-reloadOnCurrentPageChange.parameters = {screenshots: {skip: true}};
+reloadOnCurrentPageChange.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};

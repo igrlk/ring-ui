@@ -9,6 +9,7 @@ export default {
   parameters: {
     notes: 'Displays a link which copies test to clipboard.',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
 };
 

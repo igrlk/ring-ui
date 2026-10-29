@@ -2,6 +2,7 @@ import {useState, createElement, useRef} from 'react';
 import permissionIcon from '@jetbrains/icons/settings';
 import {type StoryFn} from '@storybook/react-webpack5';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import hubConfig from '../../.storybook/hub-config';
 import Auth from '../auth/auth';
 import HTTP from '../http/http';
@@ -25,6 +26,7 @@ export default {
     hint: 'hint',
     hintOnSelection: 'hint on selection',
   },
+  play: playScreenshotActions,
 };
 
 export const Basic: StoryFn<QueryAssistAttrs> = args => {
@@ -61,7 +63,7 @@ export const Basic: StoryFn<QueryAssistAttrs> = args => {
 };
 
 Basic.storyName = 'basic';
-Basic.parameters = {screenshots: {skip: true}};
+Basic.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 Basic.args = {
   query: 'test',
   focus: true,
@@ -175,7 +177,7 @@ withCustomRenderer.args = {
   }),
 };
 withCustomRenderer.storyName = 'with custom renderer';
-withCustomRenderer.parameters = {screenshots: {skip: true}};
+withCustomRenderer.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const WithCustomActions: StoryFn<QueryAssistAttrs> = args => {
   const [authReady, setAuthReady] = useState(false);
@@ -213,7 +215,7 @@ WithCustomActions.args = {
   actions: [<Icon glyph={permissionIcon} key='custom-action' style={{color: 'var(--ring-secondary-color)'}} />],
 };
 WithCustomActions.storyName = 'with custom actions';
-WithCustomActions.parameters = {screenshots: {skip: true}};
+WithCustomActions.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 WithCustomActions.tags = ['skip-test'];
 
 export const HugeOne: StoryFn<QueryAssistAttrs> = args => {
@@ -244,7 +246,7 @@ export const HugeOne: StoryFn<QueryAssistAttrs> = args => {
 };
 
 HugeOne.storyName = 'huge one';
-HugeOne.parameters = {screenshots: {skip: true}};
+HugeOne.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 HugeOne.args = {
   huge: true,
   query: 'test',
@@ -261,7 +263,7 @@ export const disabledOne: StoryFn<QueryAssistAttrs> = args => (
 );
 
 disabledOne.storyName = 'disabled one';
-disabledOne.parameters = {screenshots: {skip: true}};
+disabledOne.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 disabledOne.args = {
   query: '',
 };

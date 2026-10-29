@@ -19,6 +19,7 @@ export default {
   component: BaseTable,
   parameters: {
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
   argTypes: {
     selection: {

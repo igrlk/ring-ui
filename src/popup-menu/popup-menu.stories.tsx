@@ -1,3 +1,4 @@
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import PopupMenu, {ListProps} from './popup-menu';
 
 export default {
@@ -8,6 +9,7 @@ export default {
     screenshots: {captureSelector: '*[data-test~=ring-popup]'},
     a11y: {context: '#storybook-root,*[data-test~=ring-popup]'},
   },
+  play: playScreenshotActions,
 };
 
 export const basic = () => {

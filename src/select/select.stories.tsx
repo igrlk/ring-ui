@@ -4,6 +4,7 @@ import warningIcon from '@jetbrains/icons/warning';
 import searchIcon from '@jetbrains/icons/search';
 import {type StoryFn, type StoryObj} from '@storybook/react-webpack5';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import hubConfig from '../../.storybook/hub-config';
 import Text from '../text/text';
 import Link from '../link/link';
@@ -41,6 +42,7 @@ export default {
     size,
     directions,
   },
+  play: playScreenshotActions,
 };
 
 export const withAFilterAndTags: StoryFn<MultipleSelectAttrs> = args => <Select {...args} />;
@@ -98,7 +100,7 @@ export const withAvatars: StoryFn<SingleSelectAttrs> = args => <Select {...args}
 }
 
 withAFilterAndTags.storyName = 'with a filter and tags';
-withAFilterAndTags.parameters = {screenshots: {skip: true}};
+withAFilterAndTags.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const WithAvatarAndLongName = () => {
   const data: SelectItem[] = [
@@ -349,6 +351,7 @@ InlineOpensToLeft.storyName = 'inline (opens to left)';
 
 InlineOpensToLeft.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
   .demo-container {
@@ -408,6 +411,7 @@ WithDisabledMoveOverflow.storyName = 'with disabled move overflow';
 
 WithDisabledMoveOverflow.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
   .demo-container {
@@ -470,7 +474,7 @@ WithServerSideFiltering.args = {
 };
 
 WithServerSideFiltering.storyName = 'with server-side filtering';
-WithServerSideFiltering.parameters = {screenshots: {skip: true}};
+WithServerSideFiltering.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 WithServerSideFiltering.tags = ['skip-test'];
 
 export const WithFuzzySearchFilter: StoryFn<StatefulProps> = ({text, onSelect, ...restArgs}) => {
@@ -517,6 +521,7 @@ WithFuzzySearchFilter.storyName = 'with fuzzy search filter';
 
 WithFuzzySearchFilter.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
   .demo {
@@ -529,7 +534,7 @@ WithFuzzySearchFilter.parameters = {
 export const withALargeDataset: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
 
 withALargeDataset.storyName = 'with a large dataset';
-withALargeDataset.parameters = {screenshots: {skip: true}};
+withALargeDataset.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 withALargeDataset.tags = ['skip-test'];
 
 export const withALargeDatasetAndDisabledScrollToActiveItem: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
@@ -687,7 +692,7 @@ inputBased.parameters = {
 export const inputBasedInSuggestOnlyMode: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
 
 inputBasedInSuggestOnlyMode.storyName = 'input-based in suggest-only mode';
-inputBasedInSuggestOnlyMode.parameters = {screenshots: {skip: true}};
+inputBasedInSuggestOnlyMode.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const inputBasedWithError: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
 inputBasedWithError.storyName = 'input-based with error';
@@ -764,7 +769,7 @@ withSubLevelsForListElement.args = {
 };
 
 withSubLevelsForListElement.storyName = 'with sub levels for list element';
-withSubLevelsForListElement.parameters = {screenshots: {skip: true}};
+withSubLevelsForListElement.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const withDefaultFilterModeAndALoadingIndicator: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
 {
@@ -783,7 +788,7 @@ export const withDefaultFilterModeAndALoadingIndicator: StoryFn<SingleSelectAttr
 }
 
 withDefaultFilterModeAndALoadingIndicator.storyName = 'with default filter mode and a loading indicator';
-withDefaultFilterModeAndALoadingIndicator.parameters = {screenshots: {skip: true}};
+withDefaultFilterModeAndALoadingIndicator.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const withACustomizedFilterAndAnAddItemButton: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
 {
@@ -807,7 +812,7 @@ export const withACustomizedFilterAndAnAddItemButton: StoryFn<SingleSelectAttrs>
 }
 
 withACustomizedFilterAndAnAddItemButton.storyName = "with a customized filter and an 'Add item' button";
-withACustomizedFilterAndAnAddItemButton.parameters = {screenshots: {skip: true}};
+withACustomizedFilterAndAnAddItemButton.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const withCustomItemsAndAnAddItemButton: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
 withCustomItemsAndAnAddItemButton.args = {
@@ -831,6 +836,7 @@ withCustomItemsAndAnAddItemButton.storyName = "with custom items and an 'Add ite
 
 withCustomItemsAndAnAddItemButton.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
   .label {
@@ -861,7 +867,7 @@ withAnAlwaysVisibleAddItemButton.args = {
 };
 
 withAnAlwaysVisibleAddItemButton.storyName = "with an always visible 'Add item' button";
-withAnAlwaysVisibleAddItemButton.parameters = {screenshots: {skip: true}};
+withAnAlwaysVisibleAddItemButton.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const multipleWithCustomView: StoryFn<MultipleSelectAttrs> = args => <Select {...args} />;
 {
@@ -885,7 +891,7 @@ export const multipleWithCustomView: StoryFn<MultipleSelectAttrs> = args => <Sel
 }
 
 multipleWithCustomView.storyName = 'multiple with custom view';
-multipleWithCustomView.parameters = {screenshots: {skip: true}};
+multipleWithCustomView.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const asADropdownWithoutFilter: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
 asADropdownWithoutFilter.args = {
@@ -907,7 +913,7 @@ asADropdownWithoutFilter.args = {
 };
 
 asADropdownWithoutFilter.storyName = 'as a dropdown without filter';
-asADropdownWithoutFilter.parameters = {screenshots: {skip: true}};
+asADropdownWithoutFilter.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 interface DemoComponentItem {
   label: string;
@@ -959,7 +965,7 @@ WithCustomInputAnchor.args = {
 };
 
 WithCustomInputAnchor.storyName = 'with custom input anchor';
-WithCustomInputAnchor.parameters = {screenshots: {skip: true}};
+WithCustomInputAnchor.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const withRenderOptimization: StoryFn<SingleSelectAttrs> = args => <Select {...args} />;
 withRenderOptimization.args = {
@@ -1029,6 +1035,7 @@ fitsToScreen.storyName = 'fits to screen';
 
 fitsToScreen.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
   .demo {
@@ -1105,6 +1112,7 @@ WithFilteredFields.storyName = 'with filtered fields';
 
 WithFilteredFields.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
     .filters-block {
@@ -1137,7 +1145,7 @@ export const multipleWithSelectAll: StoryFn<MultipleSelectAttrs> = args => <Sele
 }
 
 multipleWithSelectAll.storyName = 'multiple with select all';
-multipleWithSelectAll.parameters = {screenshots: {skip: true}};
+multipleWithSelectAll.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const multipleWithSelectAllAndDisabledItem: StoryFn<MultipleSelectAttrs> = args => <Select {...args} />;
 {
@@ -1160,7 +1168,7 @@ export const multipleWithSelectAllAndDisabledItem: StoryFn<MultipleSelectAttrs> 
 }
 
 multipleWithSelectAllAndDisabledItem.storyName = 'multiple with select all and disabled item';
-multipleWithSelectAllAndDisabledItem.parameters = {screenshots: {skip: true}};
+multipleWithSelectAllAndDisabledItem.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const multipleWithSelectAllAndCustomLabels = (args: SelectProps) => <Select {...args} />;
 {
@@ -1186,7 +1194,7 @@ export const multipleWithSelectAllAndCustomLabels = (args: SelectProps) => <Sele
 }
 
 multipleWithSelectAllAndCustomLabels.storyName = 'multiple with select all and custom labels';
-multipleWithSelectAllAndCustomLabels.parameters = {screenshots: {skip: true}};
+multipleWithSelectAllAndCustomLabels.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const multipleWithLimit: StoryFn<MultipleSelectAttrs> = args => <Select {...args} />;
 {
@@ -1210,7 +1218,7 @@ export const multipleWithLimit: StoryFn<MultipleSelectAttrs> = args => <Select {
 }
 
 multipleWithLimit.storyName = 'multiple with limit';
-multipleWithLimit.parameters = {screenshots: {skip: true}};
+multipleWithLimit.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const selectInPopup: StoryFn<SingleSelectAttrs> = args => (
   <Dropdown anchor='Open dropdown'>
@@ -1235,6 +1243,7 @@ selectInPopup.storyName = 'Select in Popup';
 
 selectInPopup.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
   storyStyles: `
 <style>
   .popup-test-class {
@@ -1311,7 +1320,7 @@ export const WithLazyLoading = () => {
 };
 
 WithLazyLoading.storyName = 'With lazy loading';
-WithLazyLoading.parameters = {screenshots: {skip: true}};
+WithLazyLoading.parameters = {screenshots: {skip: true}, uiVerify: {disableSnapshot: true}};
 
 export const WithFilterAndSeparators = () => {
   const data = [

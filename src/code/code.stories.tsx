@@ -85,4 +85,5 @@ taggedTemplate.storyName = 'tagged template';
 
 taggedTemplate.parameters = {
   screenshots: {skip: true},
+  uiVerify: {disableSnapshot: true},
 };

@@ -10,6 +10,7 @@ export default {
   parameters: {
     notes: 'Provides a way to perform authorized network requests.',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
   tags: ['skip-test'],
 };

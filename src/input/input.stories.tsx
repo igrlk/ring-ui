@@ -1,6 +1,7 @@
 import {useRef, useState} from 'react';
 import searchIcon from '@jetbrains/icons/search';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Button from '../button/button';
 import {ControlsHeight, ControlsHeightContext} from '../global/controls-height';
 import {LabelType} from '../control-label/control-label';
@@ -12,6 +13,7 @@ export default {
   parameters: {
     notes: 'Text input fields of varying size.',
   },
+  play: playScreenshotActions,
 };
 
 export const Basic = () => {

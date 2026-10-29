@@ -8,6 +8,7 @@ export default {
   parameters: {
     notes: 'Provides a façade to localStorage/sessionStorage/cookies.',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
 };
 

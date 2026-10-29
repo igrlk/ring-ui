@@ -1,8 +1,9 @@
 import {Component} from 'react';
 
+import {isUIVerify} from '../../.storybook/ui-verify';
 import ProgressBar from './progress-bar';
 
-const disableAnimations = window.location.search.includes('block-animations');
+const disableAnimations = window.location.search.includes('block-animations') || isUIVerify();
 
 export default {
   title: 'Components/Progress Bar',

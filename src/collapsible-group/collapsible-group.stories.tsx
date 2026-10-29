@@ -1,6 +1,7 @@
 import {useRef, useState} from 'react';
 import buildTypeIcon from '@jetbrains/icons/buildType-12px';
 
+import {playScreenshotActions} from '../../.storybook/ui-verify';
 import Avatar, {Size as AvatarSize} from '../avatar/avatar';
 import Button from '../button/button';
 import Icon from '../icon/icon';
@@ -14,6 +15,7 @@ const captureSelector = `[data-test~="${screenshotTestId}"]`;
 
 export default {
   title: 'Components/CollapsibleGroup',
+  play: playScreenshotActions,
 };
 
 const bodyText =

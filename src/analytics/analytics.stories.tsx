@@ -8,6 +8,7 @@ export default {
   parameters: {
     notes: 'Provides a façade to Google Analytics and other web analytics services through a system of plugins.',
     screenshots: {skip: true},
+    uiVerify: {disableSnapshot: true},
   },
 };
 
