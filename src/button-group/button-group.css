@@ -28,8 +28,6 @@
 
   border-radius: var(--ring-border-radius);
 
-  box-shadow: var(--ring-button-shadow) var(--ring-button-group-button-border-color);
-
   line-height: normal;
 }
 
