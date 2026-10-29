@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
 
-  padding: calc(var(--ring-unit) * 1.5);
+  padding: calc(var(--ring-unit) * 2);
 
   color: var(--ring-text-color);
   border: 1px solid var(--ring-borders-color);
