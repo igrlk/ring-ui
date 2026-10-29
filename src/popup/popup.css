@@ -12,7 +12,6 @@
 
   box-sizing: border-box;
 
-  border: 1px solid var(--ring-popup-border-color);
   border-radius: var(--ring-border-radius);
 
   background-color: var(--ring-popup-background-color);
